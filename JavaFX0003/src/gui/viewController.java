@@ -25,6 +25,15 @@ public class viewController implements Initializable{
 	private Label labelResult;
 	
 	@FXML
+	private Button teste;
+	
+	
+	@FXML
+	public void testeAction () {
+		System.out.println("Funcionou!");
+	}
+	
+	@FXML
 	public void btnTestAction (){
 		try {
 			double number1 =  Double.parseDouble(txtNumber1.getText());
@@ -40,7 +49,10 @@ public class viewController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		//Limitador para permitir somente caractere numérico!
 		 Constraint.setTextFieldDouble(txtNumber1);
 		 Constraint.setTextFieldDouble(txtNumber2);
+		 //Limitador de numeros
+		 Constraint.setTextFieldMaxLength(txtNumber1, 3);
 	}
 }
